@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Distributed Simulator</title>
+
+  <!-- Подключение библиотек -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Стили -->
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    #controls {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    svg {
+      width: 100vw;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+    .node { cursor: pointer; }
+    .link { stroke: #999; stroke-width: 2px; }
+    button, select {
+      margin: 3px 0;
+      width: 180px;
+      padding: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Панель управления -->
+  <div id="controls">
+    <button id="start">Start</button>
+    <button id="pause">Pause</button>
+    <button id="step">Step</button>
+    <button id="reset">Reset</button>
+    <select id="algorithm-select"></select>
+    <button id="sendMessage">Send Message from Selected</button>
+    <button id="startSelected">Start from Selected Node</button>
+  </div>
+
+  <!-- Граф -->
+  <svg id="graph"></svg>
+
+  <!-- Скрипт клиента -->
+  <script src="client.js"></script>
+
+</body>
+</html>

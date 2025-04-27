@@ -1,0 +1,5 @@
+node_modules/
+client/public/socket.io/
+.env
+.DS_Store
+server/node_modules/

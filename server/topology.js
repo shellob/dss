@@ -1,0 +1,37 @@
+module.exports = {
+  nodes: [
+    { id: 'A', neighbors: ['B', 'C'] },
+    { id: 'B', neighbors: ['A', 'D', 'E'] },
+    { id: 'C', neighbors: ['A', 'F'] },
+    { id: 'D', neighbors: ['B', 'G'] },
+    { id: 'E', neighbors: ['B', 'F', 'H'] },
+    { id: 'F', neighbors: ['C', 'E', 'I'] },
+    { id: 'G', neighbors: ['D'] },
+    { id: 'H', neighbors: ['E'] },
+    { id: 'I', neighbors: ['F', 'J'] },
+    { id: 'J', neighbors: ['I'] }
+  ],
+  edges: [
+    { from: 'A', to: 'B', delay: 100 },
+    { from: 'A', to: 'C', delay: 120 },
+    { from: 'B', to: 'A', delay: 100 },
+    { from: 'B', to: 'D', delay: 150 },
+    { from: 'B', to: 'E', delay: 130 },
+    { from: 'C', to: 'A', delay: 120 },
+    { from: 'C', to: 'F', delay: 140 },
+    { from: 'D', to: 'B', delay: 150 },
+    { from: 'D', to: 'G', delay: 180 },
+    { from: 'E', to: 'B', delay: 130 },
+    { from: 'E', to: 'F', delay: 110 },
+    { from: 'E', to: 'H', delay: 150 },
+    { from: 'F', to: 'C', delay: 140 },
+    { from: 'F', to: 'E', delay: 110 },
+    { from: 'F', to: 'I', delay: 160 },
+    { from: 'G', to: 'D', delay: 180 },
+    { from: 'H', to: 'E', delay: 150 },
+    { from: 'I', to: 'F', delay: 160 },
+    { from: 'I', to: 'J', delay: 200 },
+    { from: 'J', to: 'I', delay: 200 },
+  ],
+  algorithm: 'christian'
+};
